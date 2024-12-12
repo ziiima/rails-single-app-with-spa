@@ -1,0 +1,25 @@
+services:
+  app:
+    container_name: rails-single-app
+    build:
+      context: .
+      dockerfile: tmp.ruby.dockerfile
+      target: dev
+      args:
+        RUBY_VERSION: 3.3
+        NODE_VERSION: 22
+        WORKING_DIR: /workspace/app
+    tty: true
+    restart: on-failure
+    ports:
+      - 3000:3000
+    networks:
+      - single_app
+    volumes:
+      - ..:/workspace/app
+
+networks:
+  single_app: {}
+
+volumes:
+  db_data: {}
