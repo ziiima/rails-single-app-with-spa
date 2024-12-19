@@ -1,0 +1,52 @@
+{
+  "name": "my-webpack-project",
+  "version": "1.0.0",
+  "description": "My webpack project",
+  "main": "index.js",
+  "scripts": {
+    "webpack:watch": "webpack watch",
+    "build": "webpack --mode=production --node-env=production",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "watch": "webpack --watch",
+    "server": "webpack serve",
+    "vite:dev": "vite --host 0.0.0.0",
+    "vite:build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "vite:preview": "vite preview",
+    "preview:watch": "concurrently \"vite preview -l silent\" \"vite build --watch\"",
+    "gen:template": "scaffdog create",
+    "gen:component": "scaffdog generate component",
+    "gen:hooks": "scaffdog generate hooks"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "@webpack-cli/generators": "^3.0.7",
+    "autoprefixer": "^10.4.20",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "postcss": "^8.4.49",
+    "postcss-loader": "^8.1.1",
+    "prettier": "^3.4.2",
+    "sass": "^1.82.0",
+    "sass-loader": "^16.0.4",
+    "scaffdog": "4.1.0",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.1",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.2.0"
+  },
+  "dependencies": {
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.2",
+    "concurrently": "^9.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

@@ -13,6 +13,7 @@ services:
     restart: on-failure
     ports:
       - 3000:3000
+      - 4200:4200
     networks:
       - single_app
     volumes:
