@@ -54,6 +54,9 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+
+  # https://github.com/ncr/rack-proxy
+  gem 'rack-proxy', '~> 0.7.7'
 end
 
 group :test do

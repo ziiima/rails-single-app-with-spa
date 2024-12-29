@@ -21,7 +21,7 @@ questions:
 ```typescript
 import React from 'react';
 
-type {{ COMPONENT_NAME }}Props = {}
+type Props = {}
 
 export const {{ COMPONENT_NAME }}: React.FC<{{ COMPONENT_NAME }}Props> = () => {
   return (

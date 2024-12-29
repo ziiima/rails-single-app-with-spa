@@ -17,17 +17,18 @@ export default defineConfig({
   build: {
     outDir: "dist",
     sourcemap: true,
+    manifest: true,
     rollupOptions: {
       input: {
         ui: './frontend/main.tsx',
       },
-      output: {
-        dir: 'dist',
-        format: 'es', // または'cjs'など
-        entryFileNames: '[name].js',
-        chunkFileNames: '[name].js',
-        assetFileNames: '[name].[ext]',
-      },
+    //   output: {
+    //     dir: 'dist',
+    //     format: 'es', // または'cjs'など
+    //     entryFileNames: '[name].js',
+    //     chunkFileNames: '[name].js',
+    //     assetFileNames: '[name].[ext]',
+    //   },
     },
   },
 })

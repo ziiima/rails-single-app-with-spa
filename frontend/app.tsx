@@ -7,5 +7,5 @@ export const App: React.FC = () => {
             <h1>Hello React!</h1>
     <SubComponent name="My Counter for TypeScript"/>
 </div>
-    )    
+    )
 }
