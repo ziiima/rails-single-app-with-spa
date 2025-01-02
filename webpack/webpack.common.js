@@ -3,21 +3,11 @@
 const isProduction = process.env.NODE_ENV == 'production';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
-const webpack = require("webpack");
 
 const stylesHandler = 'style-loader';
 
-const config = {
-    devServer: {
-        port: 4200,
-        host: "0.0.0.0",
-        hot:true,
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-        },
-    },
+module.exports = {
     entry: {
-        ui: './frontend/main.tsx',
         admin: "./frontend/app/admin/main.tsx",
         app: "./frontend/app/saas/main.tsx",
     },
@@ -30,7 +20,6 @@ const config = {
         new WebpackManifestPlugin({
             publicPath: ""
         }),
-        new webpack.HotModuleReplacementPlugin(),
     ],
     module: {
         rules: [
@@ -59,13 +48,4 @@ const config = {
     resolve: {
         extensions: ['.tsx', '.ts', '.jsx', '.js', '...'],
     },
-};
-
-module.exports = () => {
-    if (isProduction) {
-        config.mode = 'production';
-    } else {
-        config.mode = 'development';
-    }
-    return config;
 };

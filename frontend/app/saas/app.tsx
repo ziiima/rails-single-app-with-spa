@@ -1,5 +1,11 @@
+import { BrowserRouter, Route, Routes } from "react-router";
+
 export const App = () => {
     return (
-        <div>sample from app</div>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/home" element={<div>sample from home</div>} />
+            </Routes>
+        </BrowserRouter>
     )
 }

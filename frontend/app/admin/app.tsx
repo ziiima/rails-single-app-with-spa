@@ -1,5 +1,13 @@
-export const App = () => {
+import { BrowserRouter } from "react-router"
+import { RoutesPage } from "./routes"
+import { FC, StrictMode } from "react"
+
+export const App: FC = () => {
     return (
-        <div>sample from admin</div>
+        <StrictMode>
+            <BrowserRouter>
+                <RoutesPage />
+            </BrowserRouter>
+        </StrictMode>
     )
 }
