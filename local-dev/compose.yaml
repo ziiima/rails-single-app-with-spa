@@ -19,6 +19,26 @@ services:
       - single_app
     volumes:
       - ..:/workspace/app
+  local_stack:
+    container_name: local_stack_container
+    build:
+      context: .
+      dockerfile: tmp.localstack.dockerfile
+      args:
+        LOCALSTACK_VERSION: latest
+  cognito:
+    container_name: cognito_container
+    build:
+      context: .
+      dockerfile: tmp.cognito.dockerfile
+      args:
+        MOTO_VERSION: 5.0.25
+    ports:
+      - 4000:4000
+    networks:
+      - single_app
+    restart: on-failure
+
 
 networks:
   single_app: {}
